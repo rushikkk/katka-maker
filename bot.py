@@ -1,9 +1,10 @@
 import discord
 import logging
-import aiohttp
-import asyncio
+import requests
 from discord import Game
 from discord.ext import commands
+import xml.etree.ElementTree
+import secrets
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - \
     %(message)s', level=logging.INFO)
@@ -24,51 +25,52 @@ async def on_ready():
 
 @bot.command()
 async def anime():
-    """Adds two numbers together."""
+    """Send Naruto in chat."""
     url = "https://qtv.ua/wp-content/uploads/2016/12/1453876472-30f41751775300d9860d749c94fb5d5b-640x480.jpg"
     await bot.say(url)
 
 
 @bot.command()
 async def cat():
-    """Adds two numbers together."""
-    async with aiohttp.ClientSession() as session:
-        r = await session.get('http://aws.random.cat/meow')
-        if r.status == 200:
-            js = await r.json()
-            print(js['file'])
-            await bot.say(js['file'])
-            return
-    # await bot.say(url)
+    """Link a picture with a cat in chat."""
+    r = requests.get('http://thecatapi.com/api/images/get?api_key={}&format=xml&type=gif,png,jpg'
+                     .format(secrets.CAT_API_TOKEN))
+    if r.status_code == 200:
+        e = xml.etree.ElementTree.fromstring(r.content)
+        for child in e.iter('url'):
+            await bot.say(child.text)
+    else:
+        await bot.say("Котики афк :'(")
 
 
-@bot.command(pass_context=True)
-async def anime2(ctx):
-    print(dir(ctx.message))
+@bot.command()
+async def dog():
+    """Link a picture with a dog in chat."""
+    r = requests.get('https://api.thedogapi.co.uk/v2/dog.php?limit=1')
+    if r.status_code == 200:
+        js = r.json()
+        await bot.say(js['data'][0]['url'])
+    else:
+        await bot.say("Пёсики афк :'(")
+
+
+# @bot.command(pass_context=True)
+# async def anime2(ctx):
+#     print(dir(ctx.message))
 
 
 @bot.command()
 async def anus():
-    """Adds two numbers together."""
+    """Personal command for Gleb."""
     url = "https://2ch.hk//mo/src/177945/14774709849140.jpg"
     await bot.say(url)
 
 
 @bot.command()
 async def brsm():
-    """Adds two numbers together."""
+    """Personal command for Gleb #2."""
     url = "https://pp.userapi.com/c323617/v323617351/3348/1baGYjXTp-c.jpg"
     await bot.say(url)
 
 
-# @bot.event
-# async def on_message(message):
-#    print(message.id)
-#    print(message.content)
-#    print(message.channel)
-#    print(message.channel.id)
-#    print(message.author)
-#    print(message.type)
-
-
-bot.run('NDQ5NTEwMTQ2NTgzMDM1OTA1.DelxZg.q6sHJTXf5jyahgzmq2U1wjQ5WmE')
+bot.run(secrets.TOKEN)
