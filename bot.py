@@ -18,7 +18,7 @@ client = discord.Client()
 @bot.event
 async def on_ready():
     # await bot.change_presence(game=discord.Game(name="with humans"))
-    await bot.change_presence(activity=discord.Game(name="ANIME"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for you"))
     print('------')
     print("Logged in as " + bot.user.name)
     print('------')
