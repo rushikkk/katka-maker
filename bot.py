@@ -40,6 +40,20 @@ async def anime(ctx):
 
 
 @bot.command()
+async def anime2(ctx):
+    page = random.randint(1, 864)
+    """Link a picture with a dog in chat."""
+    async with aiohttp.ClientSession() as session:
+        async with session.get('https://wall.alphacoders.com/api2.0/get.php?auth={}&method=category&id=3&page={}'
+                               .format(secrets.ANIME_KEY, page)) as r:
+            if r.status == 200:
+                js = await r.json()
+                await ctx.send(js['wallpapers'][random.randint(0, 29)]['url_image'])
+            else:
+                await ctx.send("Пёсики афк :'(")
+
+
+@bot.command()
 async def cat(ctx):
     """Link a picture with a cat in chat."""
     async with aiohttp.ClientSession() as session:
