@@ -4,6 +4,7 @@ import aiohttp
 from discord.ext import commands
 import xml.etree.ElementTree
 import secrets
+import random
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - \
     %(message)s', level=logging.INFO)
@@ -23,10 +24,18 @@ async def on_ready():
     print('------')
 
 
+anime_t = (
+    "https://qtv.ua/wp-content/uploads/2016/12/1453876472-30f41751775300d9860d749c94fb5d5b-640x480.jpg",
+    "https://i.pinimg.com/736x/dc/65/0d/dc650d5512701e1f62d0e956a77b3e05--bd-comics-manga-illustration.jpg",
+    "https://images3.alphacoders.com/474/thumb-1920-47417.jpg",
+    "https://images4.alphacoders.com/641/thumb-1920-641968.jpg",
+    )
+
+
 @bot.command()
 async def anime(ctx):
-    """Send Naruto in chat."""
-    url = "https://qtv.ua/wp-content/uploads/2016/12/1453876472-30f41751775300d9860d749c94fb5d5b-640x480.jpg"
+    """Send anime pic in chat."""
+    url = random.choice(anime_t)
     await ctx.send(url)
 
 
