@@ -99,10 +99,7 @@ async def affix(ctx):
                 js = await r.json()
                 # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
                 embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
-                # embed.set_thumbnail(url="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg")
-                # embed.set_thumbnail(url="https://image.ibb.co/h9vLxK/ability_warrior_battleshout.jpg")
                 embed.set_thumbnail(url=affixes_dict[js['title']])
-                # embed.set_thumbnail(url="http://bot-static.m-gaming.tk/wow-48px.png")
                 embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
                 embed.add_field(name=js['affix_details'][0]['name'], value="```" + js['affix_details'][0]['description'] + "```")
                 embed.add_field(name=js['affix_details'][1]['name'], value="```" + js['affix_details'][1]['description'] + "```")
@@ -110,7 +107,18 @@ async def affix(ctx):
                 embed.add_field(name=js['affix_details'][3]['name'], value="```" + js['affix_details'][3]['description'] + "```")
                 await ctx.send(embed=embed)
             else:
-                await ctx.send("lohpidr")
+                await ctx.send("Something wrong ;[")
+
+@bot.command()
+async def affixnext(ctx):
+    """Current week affixes"""
+    # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
+    embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
+    embed.set_thumbnail(url=affixes_dict[js['title']])
+    embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
+    embed.add_field(name=js['affix_details'][0]['name'], value="```" + js['affix_details'][0]['description'] + "```")
+    await ctx.send(embed=embed)
+
 
 
 
