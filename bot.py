@@ -5,6 +5,7 @@ from discord.ext import commands
 import xml.etree.ElementTree
 import secrets
 import random
+# import rio
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - \
     %(message)s', level=logging.INFO)
@@ -63,7 +64,7 @@ async def cat(ctx):
 async def dog(ctx):
     """Link a picture with a dog in chat."""
     async with aiohttp.ClientSession() as session:
-        async with session.get('https://api.thedogapi.co.uk/v2/dog.php?limit=1') as r:
+        async with session.get('http://api.thedogapi.co.uk/v2/dog.php?limit=1') as r:
             if r.status == 200:
                 js = await r.json()
                 await ctx.send(js['data'][0]['url'])
@@ -83,6 +84,34 @@ async def brsm(ctx):
     """Personal command for Gleb #2."""
     url = "https://pp.userapi.com/c323617/v323617351/3348/1baGYjXTp-c.jpg"
     await ctx.send(url)
+
+
+affixes_dict = {
+        "Тиранический, Взрывной, Упрямый, Зараженный": "http://bot-static.m-gaming.tk/tyr-burs-skitt-inf.jpg"
+        }
+
+@bot.command()
+async def affix(ctx):
+    """Current week affixes"""
+    async with aiohttp.ClientSession() as session:
+        async with session.get('https://raider.io/api/v1/mythic-plus/affixes?region=eu&locale=ru') as r:
+            if r.status == 200:
+                js = await r.json()
+                # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
+                embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
+                # embed.set_thumbnail(url="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg")
+                # embed.set_thumbnail(url="https://image.ibb.co/h9vLxK/ability_warrior_battleshout.jpg")
+                embed.set_thumbnail(url=affixes_dict[js['title']])
+                # embed.set_thumbnail(url="http://bot-static.m-gaming.tk/wow-48px.png")
+                embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
+                embed.add_field(name=js['affix_details'][0]['name'], value="```" + js['affix_details'][0]['description'] + "```")
+                embed.add_field(name=js['affix_details'][1]['name'], value="```" + js['affix_details'][1]['description'] + "```")
+                embed.add_field(name=js['affix_details'][2]['name'], value="```" + js['affix_details'][2]['description'] + "```")
+                embed.add_field(name=js['affix_details'][3]['name'], value="```" + js['affix_details'][3]['description'] + "```")
+                await ctx.send(embed=embed)
+            else:
+                await ctx.send("lohpidr")
+
 
 
 bot.run(secrets.TOKEN)
