@@ -92,41 +92,50 @@ affixes_dict = {
         "Укрепленный, Кишащий, Сотрясающий, Зараженный": "http://bot-static.m-gaming.tk/fort-teem-quak-inf.jpg"
         }
 
+# @bot.command()
+# async def affix(ctx):
+#     """Current week affixes"""
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get('https://raider.io/api/v1/mythic-plus/affixes?region=eu&locale=ru') as r:
+#             if r.status == 200:
+#                 js = await r.json()
+#                 # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
+#                 embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
+#                 embed.set_thumbnail(url=affixes_dict[js['title']])
+#                 embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
+#                 embed.add_field(name=js['affix_details'][0]['name'], value="```" + js['affix_details'][0]['description'] + "```")
+#                 embed.add_field(name=js['affix_details'][1]['name'], value="```" + js['affix_details'][1]['description'] + "```")
+#                 embed.add_field(name=js['affix_details'][2]['name'], value="```" + js['affix_details'][2]['description'] + "```")
+#                 embed.add_field(name=js['affix_details'][3]['name'], value="```" + js['affix_details'][3]['description'] + "```")
+#                 await ctx.send(embed=embed)
+#             else:
+#                 await ctx.send("Something wrong ;[")
+
+
 @bot.command()
-async def affix(ctx):
+async def affix(ctx, week: str = '0'):
     """Current week affixes"""
-    async with aiohttp.ClientSession() as session:
-        async with session.get('https://raider.io/api/v1/mythic-plus/affixes?region=eu&locale=ru') as r:
-            if r.status == 200:
-                js = await r.json()
-                # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
-                embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
-                embed.set_thumbnail(url=affixes_dict[js['title']])
-                embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
-                embed.add_field(name=js['affix_details'][0]['name'], value="```" + js['affix_details'][0]['description'] + "```")
-                embed.add_field(name=js['affix_details'][1]['name'], value="```" + js['affix_details'][1]['description'] + "```")
-                embed.add_field(name=js['affix_details'][2]['name'], value="```" + js['affix_details'][2]['description'] + "```")
-                embed.add_field(name=js['affix_details'][3]['name'], value="```" + js['affix_details'][3]['description'] + "```")
-                await ctx.send(embed=embed)
-            else:
-                await ctx.send("Something wrong ;[")
-
-@bot.command()
-async def affixnext(ctx):
-    """Current week affixes"""
-    # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
-    n_affx = affixes.get_affixes(1)
-    aff_rot = affixes.affixes_rotation[n_affx]
-    embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
-    embed.set_thumbnail(url=aff_rot[4])
-    embed.set_author(name="Аффиксы на следующей неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
-    embed.add_field(name=affixes.affixes_ru[aff_rot[0]][0], value="```" + affixes.affixes_ru[aff_rot[0]][1] + "```")
-    embed.add_field(name=affixes.affixes_ru[aff_rot[1]][0], value="```" + affixes.affixes_ru[aff_rot[1]][1] + "```")
-    embed.add_field(name=affixes.affixes_ru[aff_rot[2]][0], value="```" + affixes.affixes_ru[aff_rot[2]][1] + "```")
-    embed.add_field(name=affixes.affixes_ru[aff_rot[3]][0], value="```" + affixes.affixes_ru[aff_rot[3]][1] + "```")
-    await ctx.send(embed=embed)
-
-
+    if week == 'next':
+        week = '1'
+    if week.isdigit() and int(week) >= 0:
+        # await ctx.send(":/ Циферки больше 0 вводи после !affixnext")
+        # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
+        week = int(week)
+        n_affx = affixes.get_affixes(week)
+        aff_rot = affixes.affixes_rotation[n_affx]
+        embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
+        embed.set_thumbnail(url=aff_rot[4])
+        if week == 0:
+            embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
+        else:
+            embed.set_author(name=f"Аффиксы через {week} нед.", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
+        embed.add_field(name=affixes.affixes_ru[aff_rot[0]][0], value="```" + affixes.affixes_ru[aff_rot[0]][1] + "```")
+        embed.add_field(name=affixes.affixes_ru[aff_rot[1]][0], value="```" + affixes.affixes_ru[aff_rot[1]][1] + "```")
+        embed.add_field(name=affixes.affixes_ru[aff_rot[2]][0], value="```" + affixes.affixes_ru[aff_rot[2]][1] + "```")
+        embed.add_field(name=affixes.affixes_ru[aff_rot[3]][0], value="```" + affixes.affixes_ru[aff_rot[3]][1] + "```")
+        await ctx.send(embed=embed)
+    else:
+        await ctx.send(":/ Циферки больше 0 вводи после !affixnext")
 
 
 bot.run(secrets.TOKEN)
