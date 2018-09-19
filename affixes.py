@@ -44,7 +44,7 @@ affixes_ru = {
                     земли периодически вырываются струи огня.'],
 }
 
-# Старт 10:00 5 сентября 2018 года
+
 start_day = datetime(2018, 9, 5, 10, 00, 00, 00)
 
 
@@ -55,6 +55,3 @@ def count_week():
 def get_affixes(m=0):
     n_affix = (count_week() + m) % 12
     return n_affix
-
-
-print(affixes_rotation[get_affixes(120)])
