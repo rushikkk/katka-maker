@@ -5,6 +5,7 @@ from discord.ext import commands
 import xml.etree.ElementTree
 import secrets
 import random
+import affixes
 # import rio
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - \
@@ -87,7 +88,8 @@ async def brsm(ctx):
 
 
 affixes_dict = {
-        "Тиранический, Взрывной, Упрямый, Зараженный": "http://bot-static.m-gaming.tk/tyr-burs-skitt-inf.jpg"
+        "Тиранический, Взрывной, Упрямый, Зараженный": "http://bot-static.m-gaming.tk/tyr-burs-skitt-inf.jpg",
+        "Укрепленный, Кишащий, Сотрясающий, Зараженный": "http://bot-static.m-gaming.tk/fort-teem-quak-inf.jpg"
         }
 
 @bot.command()
@@ -113,10 +115,15 @@ async def affix(ctx):
 async def affixnext(ctx):
     """Current week affixes"""
     # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
+    n_affx = affixes.get_affixes(1)
+    aff_rot = affixes.affixes_rotation[n_affx]
     embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
-    embed.set_thumbnail(url=affixes_dict[js['title']])
+    embed.set_thumbnail(url=aff_rot[4])
     embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
-    embed.add_field(name=js['affix_details'][0]['name'], value="```" + js['affix_details'][0]['description'] + "```")
+    embed.add_field(name=affixes.affixes_ru[aff_rot[0]][0], value="```" + affixes.affixes_ru[aff_rot[0]][1] + "```")
+    embed.add_field(name=affixes.affixes_ru[aff_rot[1]][0], value="```" + affixes.affixes_ru[aff_rot[1]][1] + "```")
+    embed.add_field(name=affixes.affixes_ru[aff_rot[2]][0], value="```" + affixes.affixes_ru[aff_rot[2]][1] + "```")
+    embed.add_field(name=affixes.affixes_ru[aff_rot[3]][0], value="```" + affixes.affixes_ru[aff_rot[3]][1] + "```")
     await ctx.send(embed=embed)
 
 
