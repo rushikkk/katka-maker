@@ -119,7 +119,7 @@ async def affixnext(ctx):
     aff_rot = affixes.affixes_rotation[n_affx]
     embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
     embed.set_thumbnail(url=aff_rot[4])
-    embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
+    embed.set_author(name="Аффиксы на следующей неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
     embed.add_field(name=affixes.affixes_ru[aff_rot[0]][0], value="```" + affixes.affixes_ru[aff_rot[0]][1] + "```")
     embed.add_field(name=affixes.affixes_ru[aff_rot[1]][0], value="```" + affixes.affixes_ru[aff_rot[1]][1] + "```")
     embed.add_field(name=affixes.affixes_ru[aff_rot[2]][0], value="```" + affixes.affixes_ru[aff_rot[2]][1] + "```")
