@@ -125,11 +125,15 @@ async def rank(ctx, name: str, realm: str = 'howling-fjord', region: str = 'eu')
                 embed.set_thumbnail(url=js['thumbnail_url'])
                 embed.set_author(name=js['name'], url=js['profile_url'],
                                  icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
-                embed.add_field(name="Ур-нь предметов:", value=js['gear']['item_level_equipped'], inline=True)
-                embed.add_field(name='M+ очки:',value=js['mythic_plus_scores']['all'], inline=True)
+                embed.add_field(name="iLVL (max):", value="```" + str(js['gear']['item_level_equipped']) + " (" +
+                                                          str(js['gear']['item_level_total']) + ")```", inline=True)
+                embed.add_field(name='M+ очки:', value="```" + str(js['mythic_plus_scores']['all']) + "```",
+                                inline=True)
                 await ctx.send(embed=embed)
             else:
-                await ctx.send("Аниме афк 8'(")
-        # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
+                await ctx.send("Неверно введена команда! \nФормат команды: \
+                ```\n!rank character_name [realm='howling-fjord' [region='eu']]```\
+                \nПример команды:\
+                ```\n!rank руфлезс howling-fjord\n!rank руфлезс```")
 
 bot.run(secrets.TOKEN)
