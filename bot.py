@@ -87,31 +87,6 @@ async def brsm(ctx):
     await ctx.send(url)
 
 
-affixes_dict = {
-        "Тиранический, Взрывной, Упрямый, Зараженный": "http://bot-static.m-gaming.tk/tyr-burs-skitt-inf.jpg",
-        "Укрепленный, Кишащий, Сотрясающий, Зараженный": "http://bot-static.m-gaming.tk/fort-teem-quak-inf.jpg"
-        }
-
-# @bot.command()
-# async def affix(ctx):
-#     """Current week affixes"""
-#     async with aiohttp.ClientSession() as session:
-#         async with session.get('https://raider.io/api/v1/mythic-plus/affixes?region=eu&locale=ru') as r:
-#             if r.status == 200:
-#                 js = await r.json()
-#                 # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
-#                 embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
-#                 embed.set_thumbnail(url=affixes_dict[js['title']])
-#                 embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
-#                 embed.add_field(name=js['affix_details'][0]['name'], value="```" + js['affix_details'][0]['description'] + "```")
-#                 embed.add_field(name=js['affix_details'][1]['name'], value="```" + js['affix_details'][1]['description'] + "```")
-#                 embed.add_field(name=js['affix_details'][2]['name'], value="```" + js['affix_details'][2]['description'] + "```")
-#                 embed.add_field(name=js['affix_details'][3]['name'], value="```" + js['affix_details'][3]['description'] + "```")
-#                 await ctx.send(embed=embed)
-#             else:
-#                 await ctx.send("Something wrong ;[")
-
-
 @bot.command()
 async def affix(ctx, week: str = '0'):
     """Current week affixes"""
@@ -135,7 +110,26 @@ async def affix(ctx, week: str = '0'):
         embed.add_field(name=affixes.affixes_ru[aff_rot[3]][0], value="```" + affixes.affixes_ru[aff_rot[3]][1] + "```")
         await ctx.send(embed=embed)
     else:
-        await ctx.send(":/ Циферки больше 0 вводи после !affixnext")
+        await ctx.send(":/ Циферки больше 0 вводи после !affix")
 
+
+@bot.command()
+async def rank(ctx, name: str, realm: str = 'howling-fjord', region: str = 'eu'):
+    """rank by raider.io"""
+    async with aiohttp.ClientSession() as session:
+        async with session.get(f'https://raider.io/api/v1/characters/profile?region={region}&realm={realm}&name={name}\
+        &fields=gear,mythic_plus_scores,mythic_plus_ranks') as r:
+            if r.status == 200:
+                js = await r.json()
+                embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
+                embed.set_thumbnail(url=js['thumbnail_url'])
+                embed.set_author(name=js['name'], url=js['profile_url'],
+                                 icon_url="http://bot-static.m-gaming.tk/wow-48px.png")
+                embed.add_field(name="Ур-нь предметов:", value=js['gear']['item_level_equipped'], inline=True)
+                embed.add_field(name='M+ очки:',value=js['mythic_plus_scores']['all'], inline=True)
+                await ctx.send(embed=embed)
+            else:
+                await ctx.send("Аниме афк 8'(")
+        # embed = discord.Embed(title="**Аффиксы на этой неделе**", colour=random.randint(0, 0xFFFFFF))
 
 bot.run(secrets.TOKEN)
