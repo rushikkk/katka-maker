@@ -133,7 +133,7 @@ async def rank(ctx, name: str, realm: str = 'howling-fjord', region: str = 'eu')
             else:
                 await ctx.send("Неверно введена команда! \nФормат команды: \
                 ```\n!rank character_name [realm='howling-fjord' [region='eu']]```\
-                \nПример команды:\
-                ```\n!rank руфлезс howling-fjord\n!rank руфлезс```")
+                Пример команды:\
+                ```\n!rank руфлезс howling-fjord eu\n!rank руфлезс```")
 
 bot.run(secrets.TOKEN)
