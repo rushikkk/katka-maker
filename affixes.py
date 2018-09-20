@@ -55,6 +55,3 @@ def count_week():
 def get_affixes(m=0):
     n_affix = (count_week() + m) % 12
     return n_affix
-
-
-print(affixes_rotation[get_affixes(120)])
