@@ -1,18 +1,18 @@
 from datetime import datetime
 
 affixes_rotation = {
-    1:  ('fortified', 'sanguine', 'necrotic', 'infested', 'http://bot-static.m-gaming.tk/fort-sang-necr-inf.jpg'),
-    2:  ('tyrannical', 'bursting', 'skittish', 'infested', 'http://bot-static.m-gaming.tk/tyr-burs-skitt-inf.jpg'),
-    3:  ('fortified', 'teeming', 'quaking', 'infested', 'http://bot-static.m-gaming.tk/fort-teem-quak-inf.jpg'),
-    4:  ('tyrannical', 'raging', 'necrotic', 'infested', 'http://bot-static.m-gaming.tk/tyr-rag-necr-inf.jpg'),
-    5:  ('fortified', 'bolstering', 'skittish', 'infested', 'http://bot-static.m-gaming.tk/fort-bols-skitt-inf.jpg'),
-    6:  ('tyrannical', 'teeming', 'volcanic', 'infested', 'http://bot-static.m-gaming.tk/tyr-teem-volc-inf.jpg'),
-    7:  ('fortified', 'sanguine', 'grievous', 'infested', 'http://bot-static.m-gaming.tk/fort-sang-griev-inf.jpg'),
-    8:  ('tyrannical', 'bolstering', 'explosive', 'infested', 'http://bot-static.m-gaming.tk/tyr-bolst-expl-inf.jpg'),
-    9:  ('fortified', 'bursting', 'quaking', 'infested', 'http://bot-static.m-gaming.tk/fort-burst-quak-inf.jpg'),
-    10: ('tyrannical', 'raging', 'volcanic', 'infested', 'http://bot-static.m-gaming.tk/tyr-rag-volc-inf.jpg'),
-    11: ('fortified', 'teeming', 'explosive', 'infested', 'http://bot-static.m-gaming.tk/fort-teem-expl-inf.jpg'),
-    0:  ('tyrannical', 'bolstering', 'grievous', 'infested', 'http://bot-static.m-gaming.tk/tyr-bols-griev-inf.jpg')
+    1:  ('fortified', 'sanguine', 'necrotic', 'reaping', 'http://bot-static.m-gaming.tk/fort-sang-necr-reap.jpg'),
+    2:  ('tyrannical', 'bursting', 'skittish', 'reaping', 'http://bot-static.m-gaming.tk/tyr-burs-skitt-reap.jpg'),
+    3:  ('fortified', 'teeming', 'quaking', 'reaping', 'http://bot-static.m-gaming.tk/fort-teem-quak-reap.jpg'),
+    4:  ('tyrannical', 'raging', 'necrotic', 'reaping', 'http://bot-static.m-gaming.tk/tyr-rag-necr-reap.jpg'),
+    5:  ('fortified', 'bolstering', 'skittish', 'reaping', 'http://bot-static.m-gaming.tk/fort-bols-skitt-reap.jpg'),
+    6:  ('tyrannical', 'teeming', 'volcanic', 'reaping', 'http://bot-static.m-gaming.tk/tyr-teem-volc-reap.jpg'),
+    7:  ('fortified', 'sanguine', 'grievous', 'reaping', 'http://bot-static.m-gaming.tk/fort-sang-griev-reap.jpg'),
+    8:  ('tyrannical', 'bolstering', 'explosive', 'reaping', 'http://bot-static.m-gaming.tk/tyr-bolst-expl-reap.jpg'),
+    9:  ('fortified', 'bursting', 'quaking', 'reaping', 'http://bot-static.m-gaming.tk/fort-burst-quak-reap.jpg'),
+    10: ('tyrannical', 'raging', 'volcanic', 'reaping', 'http://bot-static.m-gaming.tk/tyr-rag-volc-reap.jpg'),
+    11: ('fortified', 'teeming', 'explosive', 'reaping', 'http://bot-static.m-gaming.tk/fort-teem-expl-reap.jpg'),
+    0:  ('tyrannical', 'bolstering', 'grievous', 'reaping', 'http://bot-static.m-gaming.tk/tyr-bols-griev-reap.jpg')
     }
 
 affixes_ru = {
@@ -28,7 +28,9 @@ affixes_ru = {
                     на 30% больше урона.'),
     'grievous':     ('Мучительный', 'Если уровень здоровья игрока опускается ниже 90%, он начинает получать \
                     нарастающий периодический урон до тех пор, пока его уровень здоровья не превысит 90%.'),
-    'infested':     ('Зараженный', "Некоторые противники, не являющиеся боссами, заражены порождениями Г'ууна."),
+    # 'infested':     ('Зараженный', "Некоторые противники, не являющиеся боссами, заражены порождениями Г'ууна."),
+    'reaping':      ('Пожинающий', "Противники, не являющиеся боссами, усилены Бвонсамди и способны мстить даже \
+                    после смерти."),
     'necrotic':     ('Некротический', 'Все атаки противника в ближнем бою накладывают на цели суммирующийся эффект \
                     гнили, который наносит периодический урон и уменьшает получаемое исцеление.'),
     'quaking':      ('Сотрясающий', 'Периодически все игроки излучают ударные волны, нанося урон ближайшим союзникам \
