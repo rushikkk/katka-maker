@@ -73,11 +73,11 @@ async def dog(ctx):
                 await ctx.send("Пёсики афк :'(")
 
 
-@bot.command()
-async def anus(ctx):
-    """Personal command for Gleb."""
-    url = "https://2ch.hk//mo/src/177945/14774709849140.jpg"
-    await ctx.send(url)
+# @bot.command()
+# async def anus(ctx):
+#     """Personal command for Gleb."""
+#     url = "https://2ch.hk//mo/src/177945/14774709849140.jpg"
+#     await ctx.send(url)
 
 
 @bot.command()
