@@ -1,21 +1,23 @@
 from datetime import datetime
 
 affixes_rotation = {
-    1:  ('fortified', 'sanguine', 'necrotic', 'beguiling', 'http://bot-static.m-gaming.tk/fort-sang-necr-reap.jpg'),
-    2:  ('tyrannical', 'bursting', 'skittish', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-burs-skitt-reap.jpg'),
-    3:  ('fortified', 'teeming', 'quaking', 'beguiling', 'http://bot-static.m-gaming.tk/fort-teem-quak-reap.jpg'),
-    4:  ('tyrannical', 'raging', 'necrotic', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-rag-necr-reap.jpg'),
-    5:  ('fortified', 'bolstering', 'skittish', 'beguiling', 'http://bot-static.m-gaming.tk/fort-bols-skitt-reap.jpg'),
-    6:  ('tyrannical', 'teeming', 'volcanic', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-teem-volc-reap.jpg'),
-    7:  ('fortified', 'sanguine', 'grievous', 'beguiling', 'http://bot-static.m-gaming.tk/fort-sang-griev-reap.jpg'),
-    8:  ('tyrannical', 'bolstering', 'explosive', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-bolst-expl-reap.jpg'),
-    9:  ('fortified', 'bursting', 'quaking', 'beguiling', 'http://bot-static.m-gaming.tk/fort-burst-quak-reap.jpg'),
-    10: ('tyrannical', 'raging', 'volcanic', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-rag-volc-reap.jpg'),
-    11: ('fortified', 'teeming', 'explosive', 'beguiling', 'http://bot-static.m-gaming.tk/fort-teem-expl-reap.jpg'),
-    0:  ('tyrannical', 'bolstering', 'grievous', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-bols-griev-reap.jpg')
+    1:  ('fortified', 'sanguine', 'necrotic', 'beguiling', 'http://bot-static.m-gaming.tk/fort-bolst-griev-beg.webp'),
+    2:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    3:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    4:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    5:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    6:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    7:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    8:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    9:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    10: ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    11: ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
+    0:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg')
     }
 
 affixes_ru = {
+    'unknown':      ('Информация отсутствует', 'Информация о данной неделе аффиксов отсутсвует.'),
+    'beguiling':    ('Манящий', 'В подземелье присутствуют посланники Азшары.'),
     'bolstering':   ('Усиливающий', 'Все противники, не являющиеся боссами, в момент гибели издают последний клич, \
                     увеличивая максимальный запас здоровья ближайших союзников и наносимый ими урон \
                     на 20%.'),
@@ -28,7 +30,6 @@ affixes_ru = {
                     на 30% больше урона.'),
     'grievous':     ('Мучительный', 'Если уровень здоровья игрока опускается ниже 90%, он начинает получать \
                     нарастающий периодический урон до тех пор, пока его уровень здоровья не превысит 90%.'),
-    'beguiling':    ('Манящий', 'В подземелье присутствуют посланники Азшары.'),
     'necrotic':     ('Некротический', 'Все атаки противника в ближнем бою накладывают на цели суммирующийся эффект \
                     гнили, который наносит периодический урон и уменьшает получаемое исцеление.'),
     'quaking':      ('Сотрясающий', 'Периодически все игроки излучают ударные волны, нанося урон ближайшим союзникам \
