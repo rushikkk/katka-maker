@@ -1,7 +1,7 @@
 from datetime import datetime
 
 affixes_rotation = {
-    1:  ('fortified', 'sanguine', 'necrotic', 'beguiling', 'http://bot-static.m-gaming.tk/fort-bolst-griev-beg.webp'),
+    1:  ('fortified', 'bolstering', 'grievous', 'beguiling', 'http://bot-static.m-gaming.tk/fort-bolst-griev-beg.webp'),
     2:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
     3:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
     4:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.jpg'),
