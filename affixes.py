@@ -2,7 +2,7 @@ from datetime import datetime
 
 affixes_rotation = {
     1:  ('fortified', 'bolstering', 'grievous', 'beguiling', 'http://bot-static.m-gaming.tk/fort-bolst-griev-beg.webp'),
-    2:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
+    2:  ('tyrannical', 'raging', 'explosive', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-rag-expl-beg.webp'),
     3:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
     4:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
     5:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
