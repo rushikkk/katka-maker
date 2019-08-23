@@ -8,7 +8,7 @@ affixes_rotation = {
     4:  ('tyrannical', 'teeming', 'volcanic', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-teem-volc-beg.webp'),
     5:  ('fortified', 'bolstering', 'skittish', 'beguiling', 'http://bot-static.m-gaming.tk/fort-bolst-skit-beg.webp'),
     6:  ('tyrannical', 'bursting', 'necrotic', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-burst-necr-beg.webp'),
-    7:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
+    7:  ('fortified', 'sanguine', 'quaking', 'beguiling', 'http://bot-static.m-gaming.tk/fort-sang-quak-beg.webp'),
     8:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
     9:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
     10: ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
