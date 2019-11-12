@@ -9,7 +9,7 @@ affixes_rotation = {
     5:  ('fortified', 'bolstering', 'skittish', 'beguiling', 'https://bot-static.m-gaming.tk/fort-bolst-skit-beg.webp'),
     6:  ('tyrannical', 'bursting', 'necrotic', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-burst-necr-beg.webp'),
     7:  ('fortified', 'sanguine', 'quaking', 'beguiling', 'https://bot-static.m-gaming.tk/fort-sang-quak-beg.webp'),
-    8:  ('tyrannical', 'bolstering', 'explosive', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-bolst-expl.webp'),
+    8:  ('tyrannical', 'bolstering', 'explosive', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-bolst-expl-beg.webp'),
     9:  ('fortified', 'bursting', 'volcanic', 'beguiling', 'https://bot-static.m-gaming.tk/fort-burst-volc-beg.webp'),
     10: ('tyrannical', 'raging', 'volcanic', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-rag-volc-beg.webp'),
     11: ('fortified', 'teeming', 'quaking', 'beguiling', 'https://bot-static.m-gaming.tk/fort-teem-quak-beg.webp'),
