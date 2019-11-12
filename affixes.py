@@ -5,15 +5,15 @@ affixes_rotation = {
          'https://bot-static.m-gaming.tk/fort-bolst-griev-beg.webp'),
     2:  ('tyrannical', 'raging', 'explosive', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-rag-expl-beg.webp'),
     3:  ('fortified', 'sanguine', 'grievous', 'beguiling', 'https://bot-static.m-gaming.tk/forti-sang-griev-beg.webp'),
-    4:  ('tyrannical', 'teeming', 'volcanic', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-teem-volc-beg.webp'),
-    5:  ('fortified', 'bolstering', 'skittish', 'beguiling', 'http://bot-static.m-gaming.tk/fort-bolst-skit-beg.webp'),
-    6:  ('tyrannical', 'bursting', 'necrotic', 'beguiling', 'http://bot-static.m-gaming.tk/tyr-burst-necr-beg.webp'),
-    7:  ('fortified', 'sanguine', 'quaking', 'beguiling', 'http://bot-static.m-gaming.tk/fort-sang-quak-beg.webp'),
-    8:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
-    9:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
-    10: ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
-    11: ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp'),
-    0:  ('unknown', 'unknown', 'unknown', 'unknown', 'http://bot-static.m-gaming.tk/unknown.webp')
+    4:  ('tyrannical', 'teeming', 'volcanic', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-teem-volc-beg.webp'),
+    5:  ('fortified', 'bolstering', 'skittish', 'beguiling', 'https://bot-static.m-gaming.tk/fort-bolst-skit-beg.webp'),
+    6:  ('tyrannical', 'bursting', 'necrotic', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-burst-necr-beg.webp'),
+    7:  ('fortified', 'sanguine', 'quaking', 'beguiling', 'https://bot-static.m-gaming.tk/fort-sang-quak-beg.webp'),
+    8:  ('tyrannical', 'bolstering', 'explosive', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-bolst-expl.webp'),
+    9:  ('fortified', 'bursting', 'volcanic', 'beguiling', 'https://bot-static.m-gaming.tk/fort-burst-volc-beg.webp'),
+    10: ('tyrannical', 'raging', 'volcanic', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-rag-volc-beg.webp'),
+    11: ('fortified', 'teeming', 'quaking', 'beguiling', 'https://bot-static.m-gaming.tk/fort-teem-quak-beg.webp'),
+    0:  ('tyrannical', 'raging', 'necrotic', 'beguiling', 'https://bot-static.m-gaming.tk/tyr-rag-necr-beg.webp')
     }
 
 affixes_ru = {
