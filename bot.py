@@ -104,10 +104,15 @@ async def affix(ctx, week: str = '0'):
             embed.set_author(name="Аффиксы на этой неделе", icon_url="http://bot-static.m-gaming.tk/mplus.png")
         else:
             embed.set_author(name=f"Аффиксы через {week} нед.", icon_url="http://bot-static.m-gaming.tk/mplus.png")
-        embed.add_field(name=affixes.affixes_ru[aff_rot[0]][0], value="```" + affixes.affixes_ru[aff_rot[0]][1] + "```")
-        embed.add_field(name=affixes.affixes_ru[aff_rot[1]][0], value="```" + affixes.affixes_ru[aff_rot[1]][1] + "```")
-        embed.add_field(name=affixes.affixes_ru[aff_rot[2]][0], value="```" + affixes.affixes_ru[aff_rot[2]][1] + "```")
-        embed.add_field(name=affixes.affixes_ru[aff_rot[3]][0], value="```" + affixes.affixes_ru[aff_rot[3]][1] + "```")
+        embed.add_field(name=affixes.affixes_ru[aff_rot[0]][0], value="```" + affixes.affixes_ru[aff_rot[0]][1] + "```",
+                        inline=False)
+        embed.add_field(name=affixes.affixes_ru[aff_rot[1]][0], value="```" + affixes.affixes_ru[aff_rot[1]][1] + "```",
+                        inline=False)
+        embed.add_field(name=affixes.affixes_ru[aff_rot[2]][0], value="```" + affixes.affixes_ru[aff_rot[2]][1] + "```",
+                        inline=False)
+        embed.add_field(name=affixes.affixes_ru[aff_rot[3]][0], value="```" + affixes.affixes_ru[aff_rot[3]][1] + "```",
+                        inline=False)
+        embed.add_field(name="asd", value="zxcxz", )
         await ctx.send(embed=embed)
     else:
         await ctx.send(":/ Циферки больше 0 вводи после !affix")
