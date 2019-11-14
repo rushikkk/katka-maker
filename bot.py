@@ -112,7 +112,6 @@ async def affix(ctx, week: str = '0'):
                         inline=False)
         embed.add_field(name=affixes.affixes_ru[aff_rot[3]][0], value="```" + affixes.affixes_ru[aff_rot[3]][1] + "```",
                         inline=False)
-        embed.add_field(name="asd", value="zxcxz", )
         await ctx.send(embed=embed)
     else:
         await ctx.send(":/ Циферки больше 0 вводи после !affix")
