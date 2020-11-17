@@ -4,6 +4,6 @@ COPY . /
 #    apk add --no-cache bash git
 ENV TZ Europe/Minsk
 RUN pip install pip --upgrade
-#RUN pip install -r requirements.txt
-RUN pip install -U git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
+RUN pip install -r requirements.txt
+#RUN pip install -U git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
 CMD [ "python", "bot.py" ]
