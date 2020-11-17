@@ -101,9 +101,9 @@ async def affix(ctx, week: str = '0'):
         embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
         embed.set_thumbnail(url=aff_rot[4])
         if week == 0:
-            embed.set_author(name="Аффиксы на этой неделе", icon_url="http://static.uxoxo.gq/mplus.png")
+            embed.set_author(name="Аффиксы на этой неделе", icon_url="http://static.uxoxo.gq/wow/mplus.png")
         else:
-            embed.set_author(name=f"Аффиксы через {week} нед.", icon_url="http://static.uxoxo.gq/mplus.png")
+            embed.set_author(name=f"Аффиксы через {week} нед.", icon_url="http://static.uxoxo.gq/wow/mplus.png")
         embed.add_field(name=affixes.affixes_ru[aff_rot[0]][0], value="```" + affixes.affixes_ru[aff_rot[0]][1] + "```",
                         inline=False)
         embed.add_field(name=affixes.affixes_ru[aff_rot[1]][0], value="```" + affixes.affixes_ru[aff_rot[1]][1] + "```",
@@ -128,7 +128,7 @@ async def rank(ctx, name: str, realm: str = 'howling-fjord', region: str = 'eu')
                 embed = discord.Embed(colour=random.randint(0, 0xFFFFFF))
                 embed.set_thumbnail(url=js['thumbnail_url'])
                 embed.set_author(name=js['name'], url=js['profile_url'],
-                                 icon_url="http://static.uxoxo.gq/wow-48px.png")
+                                 icon_url="http://static.uxoxo.gq/wow/wow-48px.png")
                 embed.add_field(name="iLVL (max):", value="```" + str(js['gear']['item_level_equipped']) + " (" +
                                                           str(js['gear']['item_level_total']) + ")```", inline=True)
                 embed.add_field(name='M+ очки:', value="```" + str(js['mythic_plus_scores']['all']) + "```",
