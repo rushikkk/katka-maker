@@ -35,12 +35,12 @@ async def naruto(ctx):
 
 @bot.command()
 async def anime(ctx):
-    page = random.randint(1, 4405)
+    page = random.randint(1, 1790)
     """Link a picture with a dog in chat."""
     async with aiohttp.ClientSession() as session:
         async with session.get(
                 'https://wall.alphacoders.com/api2.0/get.php?auth={}&method=category&id=3&page={}'
-                '&width=2500&height=2000&operator=max'
+                '&width=1920&height=1080&operator=max'
                 .format(secrets.ANIME_KEY, page)) as r:
             if r.status == 200:
                 js = await r.json()
