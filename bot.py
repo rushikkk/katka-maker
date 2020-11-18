@@ -75,11 +75,11 @@ async def dog(ctx):
                 await ctx.send("Пёсики афк :'(")
 
 
-# @bot.command()
-# async def anus(ctx):
-#     """Personal command for Gleb."""
-#     url = "https://2ch.hk//mo/src/177945/14774709849140.jpg"
-#     await ctx.send(url)
+@bot.command()
+async def anus(ctx):
+    """Personal command for Gleb."""
+    url = "https://cdn.discordapp.com/attachments/484107306833805314/778543079695056896/Ih5HSz80jek.png"
+    await ctx.send(url)
 
 
 @bot.command()
