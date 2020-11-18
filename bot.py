@@ -1,3 +1,4 @@
+import io
 import discord
 import logging
 import aiohttp
@@ -32,7 +33,6 @@ async def naruto(ctx):
     url = "https://qtv.ua/wp-content/uploads/2016/12/1453876472-30f41751775300d9860d749c94fb5d5b-640x480.jpg"
     await ctx.send(url)
 
-
 @bot.command()
 async def anime(ctx):
     page = random.randint(1, 1790)
@@ -44,9 +44,27 @@ async def anime(ctx):
                 .format(secrets.ANIME_KEY, page)) as r:
             if r.status == 200:
                 js = await r.json()
-                await ctx.send(js['wallpapers'][random.randint(0, 29)]['url_image'])
-            else:
-                await ctx.send("Аниме афк 8'(")
+                imageURL = js['wallpapers'][random.randint(0, 29)]['url_image']
+                imageName = imageURL.split('/')[-1]
+        async with session.get(imageURL) as r2:
+            if r2.status == 200:
+                data = io.BytesIO(await r2.read())
+                await ctx.send(file=discord.File(data, imageName))
+
+# @bot.command()
+# async def anime(ctx):
+#     page = random.randint(1, 1790)
+#     """Link a picture with a dog in chat."""
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get(
+#                 'https://wall.alphacoders.com/api2.0/get.php?auth={}&method=category&id=3&page={}'
+#                 '&width=1920&height=1080&operator=max'
+#                 .format(secrets.ANIME_KEY, page)) as r:
+#             if r.status == 200:
+#                 js = await r.json()
+#                 await ctx.send(js['wallpapers'][random.randint(0, 29)]['url_image'])
+#             else:
+#                 await ctx.send("Аниме афк 8'(")
 
 
 @bot.command()
