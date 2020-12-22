@@ -4,16 +4,16 @@ STATIC_URL_PREFIX = "https://static.uxoxo.gq/wow/affixes/sl/s1"
 
 affixes_rotation = {
     1:  ('fortified', 'bursting', 'volcanic', 'prideful', f'{STATIC_URL_PREFIX}/week-05.webp'),
-    2:  ('tyrannical', 'spiteful', 'grievous', 'prideful', f'{STATIC_URL_PREFIX}/week-06.webp'),
-    3:  ('fortified', 'bolstering', 'storming', 'prideful', f'{STATIC_URL_PREFIX}/week-07.webp'),
+    2:  ('tyrannical', 'bolstering', 'storming', 'prideful', f'{STATIC_URL_PREFIX}/week-07.webp'),
+    3:  ('fortified', 'spiteful', 'grievous', 'prideful', f'{STATIC_URL_PREFIX}/week-06.webp'),
     4:  ('tyrannical', 'inspiring', 'necrotic', 'prideful', f'{STATIC_URL_PREFIX}/week-08.webp'),
     5:  ('fortified', 'sanguine', 'quaking', 'prideful', f'{STATIC_URL_PREFIX}/week-09.webp'),
     6:  ('tyrannical', 'raging', 'explosive', 'prideful', f'{STATIC_URL_PREFIX}/week-10.webp'),
     7:  ('fortified', 'spiteful', 'volcanic', 'prideful', f'{STATIC_URL_PREFIX}/week-11.webp'),
     8:  ('tyrannical', 'bolstering', 'necrotic', 'prideful', f'{STATIC_URL_PREFIX}/week-12.webp'),
-    9:  ('fortified', 'bursting', 'storming', 'prideful', f'{STATIC_URL_PREFIX}/week-01.webp'),
-    10: ('tyrannical', 'sanguine', 'grievous', 'prideful', f'{STATIC_URL_PREFIX}/week-02.webp'),
-    11: ('fortified', 'inspiring', 'explosive', 'prideful', f'{STATIC_URL_PREFIX}/week-03.webp'),
+    9:  ('fortified', 'inspiring', 'storming', 'prideful', f'{STATIC_URL_PREFIX}/week-01.webp'),
+    10: ('tyrannical', 'bursting', 'explosive', 'prideful', f'{STATIC_URL_PREFIX}/week-03.webp'),
+    11: ('fortified', 'sanguine', 'grievous', 'prideful', f'{STATIC_URL_PREFIX}/week-02.webp'),
     0:  ('tyrannical', 'raging', 'quaking', 'prideful', f'{STATIC_URL_PREFIX}/week-04.webp'),
 }
 
